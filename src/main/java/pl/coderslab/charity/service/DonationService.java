@@ -12,12 +12,12 @@ public class DonationService {
         this.donationRepository = donationRepository;
     }
 
-    public Long count() {
-        return donationRepository.count();
+    public int count() {
+        return (int) donationRepository.count();
     }
 
-    public Long sumBags() {
-        return donationRepository.sumBags();
+    public int sumBags() {
+        return (int) donationRepository.sumBags();
     }
 
     public void save(Donation donation){

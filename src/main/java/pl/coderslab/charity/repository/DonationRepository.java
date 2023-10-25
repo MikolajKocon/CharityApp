@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import pl.coderslab.charity.model.Donation;
 @Repository
 public interface DonationRepository extends JpaRepository<Donation, Long> {
-    @Query("SELECT SUM(d.quantity) FROM Donation d")
-    Long sumBags();
+    @Query("SELECT COALESCE(SUM(d.quantity), 0) FROM Donation d")
+    Integer sumBags();
 }

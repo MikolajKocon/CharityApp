@@ -23,8 +23,8 @@ public class HomeController {
     @RequestMapping("/")
     public String home(Model model) {
         List<Institution> institutions = institutionService.findAll();
-        Long countDonations = donationService.count();
-        Long sumBags = donationService.sumBags();
+        int countDonations = donationService.count();
+        int sumBags = donationService.sumBags();
         model.addAttribute("institutions", institutions);
         model.addAttribute("countDonations", countDonations);
         model.addAttribute("sumBags", sumBags);
